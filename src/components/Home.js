@@ -15,7 +15,13 @@ function GetAirportData() {
 
   };
 
+// TO DO:
+// Build calculation scripts in scripts folder
+// Build DropDownMenu component
+// Build Grid component
+// useState to control numbers in grid
 // styled components
+// header and footer
 
 export default function Home() {
     let res = GetAirportData();
