@@ -10,7 +10,7 @@ function GetAirportData() {
       };
       fetchAirportData();
     }, []);
-    // console.log(airportData);
+    console.log(airportData);
     return airportData;
   };
 
@@ -26,15 +26,21 @@ function GetAirportData() {
 
 export default function Home() {
     const res = GetAirportData();
-    // console.log(res[0]);
-    if (res) {
+    console.log(res);
+    if (res.length > 0) {
         // console.log(res);
         const sample = res[0];
-        console.log(sample.["Airport"].["Code"]);
+        console.log(sample);
         // to insert: mapping function
         return ( 
-            <p>{sample.["Airport"].["Code"]}</p>
+          <div>
+            <p>Code: {sample.["Airport"].["Code"]}</p>
+          </div>
         )
+    } else {
+      return (
+        <p>Loading...</p>
+      )
     }
     
 }
