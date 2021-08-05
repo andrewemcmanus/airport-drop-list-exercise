@@ -29,11 +29,11 @@ export default function Home() {
     // console.log(res[0]);
     if (res) {
         // console.log(res);
-        // const sample = res[0];
-        // console.log(sample);
+        const sample = res[0];
+        console.log(sample.["Airport"].["Code"]);
         // to insert: mapping function
         return ( 
-            <p>{sample.Airport.Code}</p>
+            <p>{sample.["Airport"].["Code"]}</p>
         )
     }
     
