@@ -10,7 +10,7 @@ function GetAirportData() {
       };
       fetchAirportData();
     }, []);
-    console.log(airportData);
+    // console.log(airportData);
     return airportData;
 
   };
@@ -25,10 +25,12 @@ function GetAirportData() {
 
 export default function Home() {
     let res = GetAirportData();
-    console.log(res);
+    // console.log(res);
     if (res) {
+        console.log(res[0]);
+        // to insert: mapping function
         return ( 
-            <p>2</p>
+            <p>{}</p>
         )
     }
     
