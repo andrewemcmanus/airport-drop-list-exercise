@@ -12,14 +12,18 @@ function GetAirportData() {
     }, []);
     console.log(airportData);
     return airportData;
+
   };
 
 // styled components
 
 export default function Home() {
-    GetAirportData();
-    // add header and footer
-    return ( 
-        <p>{2}</p>
-    )
+    let res = GetAirportData();
+    console.log(res);
+    if (res) {
+        return ( 
+            <p>2</p>
+        )
+    }
+    
 }
