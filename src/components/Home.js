@@ -27,10 +27,10 @@ export default function Home() {
     let res = GetAirportData();
     // console.log(res);
     if (res) {
-        console.log(res[0]);
+        // console.log();
         // to insert: mapping function
         return ( 
-            <p>{}</p>
+            <p>{res[0].["Airport"].["Code"]}</p>
         )
     }
     
