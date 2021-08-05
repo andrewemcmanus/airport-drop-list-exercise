@@ -12,9 +12,5 @@ function App() {
 
 export default App;
 
-// TO DO:
-// Build calculation scripts in scripts folder
-// Build DropDownMenu component
-// Build Grid component
-// useState to control numbers in grid
+
 

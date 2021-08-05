@@ -12,7 +12,6 @@ function GetAirportData() {
     }, []);
     // console.log(airportData);
     return airportData;
-
   };
 
 // TO DO:
@@ -23,14 +22,18 @@ function GetAirportData() {
 // styled components
 // header and footer
 
+// Mapping data into grid and drop down menus
+
 export default function Home() {
-    let res = GetAirportData();
-    // console.log(res);
+    const res = GetAirportData();
+    // console.log(res[0]);
     if (res) {
-        // console.log();
+        // console.log(res);
+        // const sample = res[0];
+        // console.log(sample);
         // to insert: mapping function
         return ( 
-            <p>{res[0].["Airport"].["Code"]}</p>
+            <p>{sample.Airport.Code}</p>
         )
     }
     
