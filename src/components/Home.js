@@ -1,17 +1,4 @@
-import { useState, useEffect } from 'react';
-
-function GetAirportData() {
-    const [airportData, setairportData ] = useState([]);
-    useEffect(() => {
-      const fetchAirportData = async () => {
-        const response = await fetch('https://flare-code-exercise-data.s3.amazonaws.com/airlines.json');
-        const data = await response.json();
-        setairportData(data);
-      };
-      fetchAirportData();
-    }, []);
-    return airportData;
-  };
+import GetAirportData from '../scripts/GetAirportData';
 
 // TO DO:
 // Build calculation scripts in scripts folder
@@ -29,7 +16,6 @@ export default function Home() {
     console.log(res);
     if (res.length > 0) {
         // console.log(res);
-        // console.log(sample);
         return ( 
           <div>
             {res.map((item, idx) => (<ul key={idx}>{item.["Airport"].["Code"]}</ul>))}
