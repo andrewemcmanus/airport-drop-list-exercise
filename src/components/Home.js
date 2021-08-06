@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function GetAirportData() {
     const [airportData, setairportData ] = useState([]);
     useEffect(() => {
       const fetchAirportData = async () => {
-        const response = await fetch('https://think.cs.vt.edu/corgis/datasets/json/airlines/airlines.json');
+        const response = await fetch('https://flare-code-exercise-data.s3.amazonaws.com/airlines.json');
         const data = await response.json();
         setairportData(data);
       };
       fetchAirportData();
     }, []);
-    console.log(airportData);
     return airportData;
   };
 
 // TO DO:
 // Build calculation scripts in scripts folder
 // Build DropDownMenu component
+// Build MultiSelect component
 // Build Grid component
 // useState to control numbers in grid
 // styled components
@@ -29,12 +29,10 @@ export default function Home() {
     console.log(res);
     if (res.length > 0) {
         // console.log(res);
-        const sample = res[0];
-        console.log(sample);
-        // to insert: mapping function
+        // console.log(sample);
         return ( 
           <div>
-            <p>Code: {sample.["Airport"].["Code"]}</p>
+            {res.map((item, idx) => (<ul key={idx}>{item.["Airport"].["Code"]}</ul>))}
           </div>
         )
     } else {
